@@ -8,6 +8,8 @@ also reduces size of the video (up to 10 times)
 
 `ffmpeg -i video.mp4 -vf  "setpts=2*PTS" video_slow_down.mp4`  
 
+## Resize a video ([source](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg))
+`ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv`
 
 ## Convert a video file into gif (for GitHub)
 `ffmpeg -i video.mp4 video.gif`
