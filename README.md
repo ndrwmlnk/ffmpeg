@@ -11,6 +11,8 @@ also reduces size of the video (up to 10 times)
 ## Resize a video ([source](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg))
 `ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv`
 
+`ffmpeg -i input.avi -vf scale=1280:-2 output.mp4`  width will be divisible by 2 ([source](https://stackoverflow.com/questions/20847674/ffmpeg-libx264-height-not-divisible-by-2))
+
 ## Convert a video file into gif (for GitHub)
 `ffmpeg -i video.mp4 video.gif`
 
