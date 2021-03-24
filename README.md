@@ -32,3 +32,6 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -i input.avi -vf "select='1-between(t,20,25)', setpts=N/FRAME_RATE/TB" -af "aselect='1-between(t,20,25)', asetpts=N/SR/TB" output.avi`
 
+## Fast Way to Cut / Trim Without Re-encoding (using Copy and Input Seeking) ([source](https://ottverse.com/trim-cut-video-using-start-endtime-reencoding-ffmpeg))
+
+`ffmpeg -ss 00:00:03 -i inputVideo.mp4 -to 00:00:08 -c:v copy -c:a copy trim_ipseek_copy.mp4`
