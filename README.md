@@ -35,3 +35,9 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 ## Fast Way to Cut / Trim Without Re-encoding (using Copy and Input Seeking) ([source](https://ottverse.com/trim-cut-video-using-start-endtime-reencoding-ffmpeg))
 
 `ffmpeg -ss 00:00:03 -i inputVideo.mp4 -to 00:00:08 -c:v copy -c:a copy trim_ipseek_copy.mp4`
+
+## Compress a video for android (Telegram) using ffmpeg ([source](https://android.stackexchange.com/questions/231014/compress-a-video-for-android-using-ffmpeg))
+
+`ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4`
+
+
