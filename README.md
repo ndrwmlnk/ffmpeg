@@ -23,6 +23,8 @@ also reduces size of the video (up to 10 times)
 ## Apply an ffmpeg command to all .mov files in a directory ([source](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg))
 `for i in *.mov; do ffmpeg -i "$i" -vf  "setpts=0.5*PTS" "${i%.*}.mp4"; done`
 
+`for i in *.mov; do ffmpeg -i "$i" -r 1 -vf "scale=1280:-2" -ac 1 "${i%.*}.mp4"; done`  1 frame per second & mono audio outputs
+
 ## Merge video.mp4 and audio.mp3 ([source](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg))
 Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file, shift the video steam forward by 1 second and cut the _output.mp4_ at the shortest _video.mp4_ or _audio.mp3_
 
