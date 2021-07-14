@@ -18,7 +18,7 @@ also reduces size of the video (up to 10 times)
 
 `ffmpeg -ss 5 -t 3 -i video.mp4 -vf "fps=10,scale=320:-2" -loop -1 video.gif`  # trim from 5th second of the video + 3 seconds, 10 FPS, scale to 320 width, keep height even, infinite loop
 
-`ffmpeg -i video.mp4 -vf "crop=800:300:0:60" -loop -1 video.gif`  # crop video "crop=w:h:x:y" ([source](https://www.linuxuprising.com/2020/01/ffmpeg-how-to-crop-videos-with-examples.html))
+`ffmpeg -i video.mp4 -vf "crop=800:300:0:60" -loop -1 video.gif`  # crop video "crop=w : h : x : y" ([source](https://www.linuxuprising.com/2020/01/ffmpeg-how-to-crop-videos-with-examples.html))
 
 `convert -loop 0 video.gif video_inf.gif`  # some gifs stop in web browsers at the end of the first loop. "convert" solves this problem and makes them run in an endless loop ([source](https://superuser.com/questions/159212/how-do-i-make-an-existing-animated-gif-loop-repeatedly))
 
