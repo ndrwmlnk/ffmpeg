@@ -32,6 +32,10 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -ss -00:00:01 -i 'video.mp4' -i 'audio.mp3' -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 -shortest output.mp4`
 
+## Remove audio from video file with FFmpeg ([source](https://superuser.com/questions/268985/remove-audio-from-video-file-with-ffmpeg))
+
+`ffmpeg -i video.mp4 -c copy -an output.mp4`
+
 ## Discard the segment from 20 seconds to 25 seconds and keep everything else ([source](https://superuser.com/questions/681885/how-can-i-remove-multiple-segments-from-a-video-using-ffmpeg))
 
 `ffmpeg -i input.avi -vf "select='1-between(t,20,25)', setpts=N/FRAME_RATE/TB" -af "aselect='1-between(t,20,25)', asetpts=N/SR/TB" output.avi`
