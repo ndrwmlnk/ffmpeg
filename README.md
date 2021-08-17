@@ -48,4 +48,6 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4`
 
+## Resize all images in a folder with mogrify ([source 1](https://unix.stackexchange.com/questions/196399/how-to-batch-resize-all-images-in-a-folder-including-subfolders), [source 2](https://legacy.imagemagick.org/Usage/resize/#percent))
 
+`find . -name '*.jpg' -execdir mogrify -resize 20% {} +`
