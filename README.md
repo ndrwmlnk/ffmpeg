@@ -44,10 +44,12 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -ss 00:00:03 -i inputVideo.mp4 -to 00:00:08 -c:v copy -c:a copy trim_ipseek_copy.mp4`
 
-## Compress a video for android (Telegram) using ffmpeg ([source](https://android.stackexchange.com/questions/231014/compress-a-video-for-android-using-ffmpeg))
+## Compress a video for android (Telegram) using ffmpeg ([source 1](https://android.stackexchange.com/questions/231014/compress-a-video-for-android-using-ffmpeg), [source 2](https://android.stackexchange.com/questions/231014/compress-a-video-for-android-using-ffmpeg))
 
 `ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4`
 
-## Resize all images in a folder with mogrify ([source 1](https://unix.stackexchange.com/questions/196399/how-to-batch-resize-all-images-in-a-folder-including-subfolders), [source 2](https://legacy.imagemagick.org/Usage/resize/#percent))
+`ffmpeg -i input.mp4 -vcodec libx265 -b 2000k -maxrate 4000k output.mp4`
+
+## Resize all images in a folder with mogrify ([source 1](https://unix.stackexchange.com/questions/196399/how-to-batch-resize-all-images-in-a-folder-including-subfolders), [source 2](https://stackoverflow.com/questions/43435712/how-to-set-bitrate-limit-in-ffmpeg))
 
 `find . -name '*.jpg' -execdir mogrify -resize 20% {} +`
