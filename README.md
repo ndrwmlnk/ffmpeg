@@ -54,6 +54,6 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `find . -name '*.jpg' -execdir mogrify -resize 20% {} +`
 
-## merge all the videos in a folder to make a single video file ([source](https://stackoverflow.com/questions/28922352/how-can-i-merge-all-the-videos-in-a-folder-to-make-a-single-video-file-using-ffm/37756628))
+## Merge all the videos in a folder to make a single video file ([source](https://stackoverflow.com/questions/28922352/how-can-i-merge-all-the-videos-in-a-folder-to-make-a-single-video-file-using-ffm/37756628))
 
 `find *.mp4 | sed 's:\ :\\\ :g'| sed 's/^/file /' > fl.txt; ffmpeg -f concat -i fl.txt -c copy output.mp4; rm fl.txt`
