@@ -53,3 +53,7 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 ## Resize all images in a folder with mogrify ([source 1](https://unix.stackexchange.com/questions/196399/how-to-batch-resize-all-images-in-a-folder-including-subfolders), [source 2](https://stackoverflow.com/questions/43435712/how-to-set-bitrate-limit-in-ffmpeg))
 
 `find . -name '*.jpg' -execdir mogrify -resize 20% {} +`
+
+## merge all the videos in a folder to make a single video file using ([source](https://stackoverflow.com/questions/28922352/how-can-i-merge-all-the-videos-in-a-folder-to-make-a-single-video-file-using-ffm/37756628)
+
+`find *.mp4 | sed 's:\ :\\\ :g'| sed 's/^/file /' > fl.txt; ffmpeg -f concat -i fl.txt -c copy output.mp4; rm fl.txt`
