@@ -57,3 +57,10 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 ## Merge all the videos in a folder to make a single video file ([source](https://stackoverflow.com/questions/28922352/how-can-i-merge-all-the-videos-in-a-folder-to-make-a-single-video-file-using-ffm/37756628))
 
 `find *.mp4 | sed 's:\ :\\\ :g'| sed 's/^/file /' > fl.txt; ffmpeg -f concat -i fl.txt -c copy output.mp4; rm fl.txt`
+
+## Video Stabilization With `ffmpeg` and `VidStab` ([source](https://www.paulirish.com/2021/video-stabilization-with-ffmpeg-and-vidstab))
+
+`ffmpeg -i clip.mkv -vf vidstabdetect -f null -` 
+
+`ffmpeg -i clip.mkv -vf vidstabtransform clip-stabilized.mkv`
+
