@@ -64,3 +64,7 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -i clip.mkv -vf vidstabtransform clip-stabilized.mkv`
 
+## Video Stabilization With `ffmpeg` and `deshake` ([source](http://blog.gregzaal.com/2014/05/30/camera-stabilisation-with-ffmpeg))
+
+`ffmpeg -i input.mov -vf deshake output.mov` 
+
