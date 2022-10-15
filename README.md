@@ -26,7 +26,7 @@ also reduces size of the video (up to 10 times)
 `ffmpeg -framerate 30 -pattern_type glob -i '*.jpg' -c:v libx264 -pix_fmt yuv420p out.mp4`
 
 ## Convert video to images ([source](https://stackoverflow.com/questions/40088222/ffmpeg-convert-video-to-images))
-`ffmpeg -i input.mp4 -vf fps=1 out%d.png` output one image every second
+`ffmpeg -i input.mp4 -vf fps=1 out%04d.png` output one image every second with leading zeros in file names
 
 ## Apply an ffmpeg command to all .mov files in a directory ([source](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg))
 `for i in *.mov; do ffmpeg -i "$i" -vf  "setpts=0.5*PTS" "${i%.*}.mp4"; done`
