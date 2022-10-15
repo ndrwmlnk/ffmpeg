@@ -22,10 +22,11 @@ also reduces size of the video (up to 10 times)
 
 `convert -loop 0 video.gif video_inf.gif`  # some gifs stop in web browsers at the end of the first loop. "convert" solves this problem and makes them run in an endless loop ([source](https://superuser.com/questions/159212/how-do-i-make-an-existing-animated-gif-loop-repeatedly))
 
-
 ## Create a video from images ([source](https://stackoverflow.com/questions/24961127/how-to-create-a-video-from-images-with-ffmpeg))
 `ffmpeg -framerate 30 -pattern_type glob -i '*.jpg' -c:v libx264 -pix_fmt yuv420p out.mp4`
 
+## Convert video to images ([source](https://stackoverflow.com/questions/40088222/ffmpeg-convert-video-to-images))
+`ffmpeg -i input.mp4 -vf fps=1 out%d.png`
 
 ## Apply an ffmpeg command to all .mov files in a directory ([source](https://stackoverflow.com/questions/5784661/how-do-you-convert-an-entire-directory-with-ffmpeg))
 `for i in *.mov; do ffmpeg -i "$i" -vf  "setpts=0.5*PTS" "${i%.*}.mp4"; done`
