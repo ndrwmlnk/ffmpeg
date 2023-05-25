@@ -74,6 +74,10 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -i input.mov -vf deshake output.mov` 
 
+## Reverse A Video Using `ffmpeg` ([source](https://ottverse.com/reverse-a-video-using-ffmpeg/))
+
+`ffmpeg -i originalVideo.mp4 -vf reverse reversedVideo.mp4`  
+
 ## Batch Convert PNG to JPG from Mac Terminal ([source](http://tutorialshares.com/batch-convert-png-jpg-mac-terminal))
 
 `mkdir jpegs; sips -s format jpeg *.* --out jpegs`
