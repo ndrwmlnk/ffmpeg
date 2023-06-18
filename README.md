@@ -64,7 +64,7 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `find *.mp4 | sed 's:\ :\\\ :g'| sed 's/^/file /' > fl.txt; ffmpeg -f concat -i fl.txt -c copy output.mp4; rm fl.txt`
 
-## Video Stabilization With `ffmpeg` and `VidStab` ([source](https://www.paulirish.com/2021/video-stabilization-with-ffmpeg-and-vidstab))
+## Video Stabilization With `ffmpeg` and `VidStab` ([source1](https://www.paulirish.com/2021/video-stabilization-with-ffmpeg-and-vidstab), [source2](https://gist.github.com/hlorand/e5012fa315dcfe358008cf1b4611c7e0), [source3](https://github.com/georgmartius/vid.stab))
 
 `ffmpeg -i clip.mkv -vf vidstabdetect -f null -` 
 
