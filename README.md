@@ -42,6 +42,10 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -i video.mp4 -c copy -an output.mp4`
 
+## Merging video and audio, with Copying the audio without re-encoding ([source](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg))
+
+`ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4`  # add the -shortest option so that ffmpeg will stop encoding once one file ends
+
 ## Discard the segment from 20 seconds to 25 seconds and keep everything else ([source](https://superuser.com/questions/681885/how-can-i-remove-multiple-segments-from-a-video-using-ffmpeg))
 
 `ffmpeg -i input.avi -vf "select='1-between(t,20,25)', setpts=N/FRAME_RATE/TB" -af "aselect='1-between(t,20,25)', asetpts=N/SR/TB" output.avi`
