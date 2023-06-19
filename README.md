@@ -42,6 +42,10 @@ Replace the original audio stream in _video.mp4_ with the _audio.mp3_ audio file
 
 `ffmpeg -i video.mp4 -c copy -an output.mp4`
 
+## Extract audio from video ([source](https://stackoverflow.com/questions/9913032/how-can-i-extract-audio-from-video-with-ffmpeg))
+
+`ffmpeg -i input-video.avi -vn -acodec copy output-audio.aac`
+
 ## Merging video and audio, with Copying the audio without re-encoding ([source](https://superuser.com/questions/277642/how-to-merge-audio-and-video-file-in-ffmpeg))
 
 `ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4`  # add the -shortest option so that ffmpeg will stop encoding once one file ends
