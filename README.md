@@ -1,12 +1,15 @@
 # ffmpeg
 Collection of ffmpeg commands
 
-## Video speed up / slow down ([source](https://www.bogotobogo.com/FFMpeg/ffmpeg_video_speed_up_slow_down.php))
+## Video speed up / slow down ([source 1](https://www.bogotobogo.com/FFMpeg/ffmpeg_video_speed_up_slow_down.php))([source 2](https://superuser.com/questions/1324525/is-it-possible-to-speed-up-video-with-audio-using-ffmpeg-without-changing-audio))
 also reduces size of the video (up to 10 times)
 
 `ffmpeg -i video.mp4 -vf  "setpts=0.5*PTS" video_speed_up.mp4`
 
 `ffmpeg -i video.mp4 -vf  "setpts=2*PTS" video_slow_down.mp4`  
+
+`ffmpeg -i "input_video.mp4" -vf "setpts=(PTS-STARTPTS)/2.5" -af atempo=2.5 "input_video_2.5X.mp4"`  speed up video and audio by 2.5X  
+
 
 ## Resize a video ([source](https://superuser.com/questions/624563/how-to-resize-a-video-to-make-it-smaller-with-ffmpeg))
 `ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv`
